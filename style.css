@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+    height: 15vh;
+}
+
+#container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+
+ul{
+    display: flex;
+    align-items: center;
+}
+
+.info li{
+    font-size: 1.3rem;
+    padding: 0 1rem;
+    transition: all .4s;
+    letter-spacing: 2px;
+}
+
+.info li:hover{
+    color: brown;
+}
+
+.redes-sociais li{
+    color: black;
+    font-size: 1.2rem;
+    padding: 0 .5rem;
+}    
+
+.redes-sociais li i:hover{
+    color: rgba(0, 0, 0, 0.575);
+
+}
+.tres-barrinha{
+    cursor: pointer;
+    display: none;
+}
+
+.tres-barrinha div{
+    background: #fff;
+    height: 3px;
+    border-radius: 1px;
+    width: 32px;
+    margin: 8px;
+    transition: .4s;
+}
+
+@media (max-width: 800px){
+     
+    body{
+        overflow-x: hidden;
+    }
+
+    .info{
+      position: absolute;
+      top: 5.65rem;
+      right: 0;
+      width: 50vw;
+      height: 85vh;
+      background: blue;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+    }
+
+    .info li{
+        opacity: 0;
+        margin-left: 0;
+    }
+    
+    .redes-sociais{
+        display: none;
+    }
+
+    .tres-barrinha{
+        display: block;
+        /* margin-left: 5rem; */
+    }
+       
+}
+
+.info.active{
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade{
+    from{
+       opacity: 0;
+       transform: translateX(50px);
+    }
+    
+    to{
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+}
+
+.tres-barrinha.active .line1{transform: rotate(-45deg) translate(-9px,9px);}
+.tres-barrinha.active .line2{opacity: 0;}
+.tres-barrinha.active .line3{transform: rotate(45deg) translate(-6px,-7px);}
+
+
